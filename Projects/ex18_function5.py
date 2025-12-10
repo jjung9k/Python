@@ -1,0 +1,168 @@
+# 파이썬의 표준(내장) 함수 중 활용이 많은 15개 정도 소개.
+
+#1. print() : 데이터를 화면에 출력
+#2. input() : 키보드로부터 문자열로 데이터를 입력
+#3. type() : 데이타 또는 변수의 타입을 리턴(값을 준다).
+#4. len() : 문자열이나 리스트의 길이를 알려주는 기능함수
+# message= 'Hello python'
+# print(len(message))
+# print()
+
+# aaa= [10, 20, 30]   
+# print( len(aaa) )
+# aaa.append(40)
+# print( len(aaa) )
+# print()
+
+# #5. sum() : 반복 가능한 데이터의 모든 요소 합을 리턴
+# total= sum(aaa)
+# print(total)
+# print()   # 10+20+30+40 = 100(결과값)
+
+# #6. min(), max() : 최소값, 최대값 리턴
+# bbb=[10, 72, 54, 3, 180, 42, 1500]
+# print( max(bbb) )
+# print( min(bbb) )
+# print()
+
+# #7. abs() : 절대값(앱솔루리) 함수
+# num= 100
+# print( abs(num) )
+# num= -100
+# print( abs(num) )
+# print()
+
+# #8. range() : 지정된 범위의 숫자 시퀀스(순차적)를 만들어 줌
+# aa= range(5) # 0 ~ 4 의 범위
+# print(aa)
+# for n in aa:
+#     print(n)
+
+#9. list() : 다른 형태의 iterable(반복할 수 있는) 객체들을 모두 list 타입으로 변환하거나 빈 리스트 생성도 가능
+bb= []
+print(bb)
+
+cc= list()
+print(cc)
+
+dd= list('hello')
+print(dd)
+print()
+
+dd= list( (10, 20, 30) )
+print(dd)
+
+cc= list( {'name':'sam', 'age':20} ) 
+print(cc)  # 키 값(name, age)만 출력 된다.
+print()
+
+dd = list( {10,20,30,20} ) #set타입(중복 저장 안되는 타입)
+print(dd)
+
+print(range(5))
+print(list( range(5)) )
+aa= [ n for n in range(5) ]
+print(aa)
+
+#[별외!] 문자열의 연산자 '+' , '*'   ---> (+; 결합, *: 반복) 리스트로 있음
+ee= [10, 20, 30] + [4, 5,6]
+print(ee)
+
+ee= [10]*5  #요소 값 10을 5개 더 실행
+print(ee)
+
+ee= [100, 200, 300]*4
+print(ee)
+print()
+
+ee= [1]*20 + [0]*7 
+print(ee)
+print(len(ee))
+
+#10. map() : 반복 가능한 객체의 각 요소에 특정 함수를 적용한 결과 리스트를 리턴.
+aaa= [10, 20, 30]
+bbb= map( lambda n:n*2, aaa )
+print(bbb) # 객체값만 나온다.
+print(list(bbb)) # 리스트로 입력해야 값이 나온다.
+print()
+
+#11. filter() : 반복 가능한 객체의 각 요소에 특정 함수의 조건값이 True인 결과요소만 뽑아서 리스트를 리턴
+aaa= [ 10, 50, 47, 85, 60 ]
+bbb= filter( lambda n:n>50, aaa)
+print(list(bbb))
+print()
+
+#12. sorted() : 반복 가능한 객체의 정렬된 새로운 리스트를 반환
+aaa= [40, 23, 78, 5, 63, 1500, 72]
+bbb= sorted(aaa)
+print(bbb)
+
+ccc= sorted(aaa, reverse= True)
+print(ccc)
+print()
+
+#13. enumerate() : 순서가 있는 자료형(리스트, 튜플)에 인덱스 값을 포함하는 (index, value) 튜플로 리턴해 주는 기능
+aaa= ['sam', 'robin', 'hong']
+for value in aaa: 
+    print(aaa)
+
+for t in enumerate(aaa):
+    print(t[0], t[1]) #(index, value) 
+print()
+
+for idx, value in enumerate(aaa):
+    print(idx, value)
+print()
+
+#14. zip() : 여러개의 리스트의 요소들을 병렬로 묶어서 튜플의 반복자를 만들어 냄.
+name_list=['jungku', 'hong', 'park','sam' ]
+age_list=[20, 23, 28, 15]
+people= zip(name_list, age_list)
+print(list(people))
+print()
+
+# 튜플 데이터를 dictionary 타입으로 바꿀 수 있다.
+people= zip(name_list, age_list)
+vvv= dict(people)
+print(vvv)
+print()
+
+#15. any(), all()
+# any : 요소 중에 하나라도 조건에 맞으면 True
+limit= 3
+ccc=[1,3,6,5]
+# 요소들 중에 하나라도 limit 보다 작은 값이 있는가? [ex) 소요시간이 기준시간보다 짧게 걸린 데이터가 있는가?]
+print( any( n < limit for n in ccc) )  #True
+
+# all : 모든 요소가 조건에 맞아야 True
+print( all( n < limit for n in ccc) )
+print()
+#16. 형변환 연산자들.. int(), float(), str(), bool()... list(), tuple(), dict(), set()
+#============================================================================================
+#[완전 별외 수업..] 기초타입 변수와 참조타입 변수의 차이.. 그리고 조심할 점!!
+# 파이썬의 타입 2종류
+#1. 기초 타입: int, float, str, bool                           [ 데이타를 저장하는 변수 ] 
+#2. 참조 타입: list, tuple, dict, set, object 등.. 나머지 모두!  [ 객체의 주소를 저장하는 변수 ]    
+
+# 기초타입.. 상황
+a=10 
+b=a
+print('a :', a)
+print('b :', b)
+print()
+
+b=50
+print('a :', a)
+print('b :', b)
+print()
+
+# 참조타입... 상황
+aaa= [100, 200, 300]
+bbb= aaa
+print('aaa: ', aaa)
+print('bbb: ', bbb)
+print()
+
+bbb[1]=5000
+print('aaa: ', aaa)
+print()
