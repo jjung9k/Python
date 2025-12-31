@@ -1,6 +1,6 @@
 # 데이터 분석을 통한 서비스를 개발하려면.. 데이터 수집이 필요.
 #1. 회사나 개인이 가진 매출데이터, 설문데이터, 회원데이터 등 엑셀파일 같은 형태의 데이터 [파일 입출력(표준함수 open)]
-#2. 날씨정보, 채용정보, 행사정보 등 웹을 통해 서비스 되는 데이터 [ urlib request 모듈, 외부모듈(requests, Beatuifuso )]
+#2. 날씨정보, 채용정보, 행사정보 등 웹을 통해 서비스 되는 데이터 [ urlib request 모듈, 외부모듈(requests, Beatuifulsoup4 )]
 
 #1) 네트워크 작업을 위한 모듈 추가
 from urllib import request

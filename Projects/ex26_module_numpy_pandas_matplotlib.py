@@ -19,9 +19,8 @@ print(len(bbb))
 print(len(ccc))
 print()
 
-
 # 위와 같은 리스트의 덧셈 특징을 수학적으로 계산해주는 모듈을 사용하면.... 나중에 ML이나 데이터 분석에 활용가능
-# numpy 모듈 설치 [pip install numpy ] : 리스트 같은 
+# numpy 모듈 설치 [pip install numpy ] : 리스트 같은 데이터에 대해 행렬 수학계산을 해 주는 모듈
 import numpy as np
 
 #넘파이 전용 리스트(배열 array)로 생성
@@ -179,8 +178,8 @@ print()
 
 print('-'*30)
 print()
-#엑셀파일 읽기!!!
 
+# 엑셀파일 읽기!!!
 # 예전버전에서는 xlrd 라는 모듈을 이용하여 엑셀을 읽어드렸음.
 # 현재버전에서는 openpyx1 라는 모듈을 기본으로 사용함.
 # openpyxl 는 별도 설치가 필요함. [pip install openpyxl]
@@ -209,7 +208,7 @@ print('-'*40)
 print()
 
 #데이터 분석을 용이하게 하려면.. 시각화를 해야 함.이를 위한 모듈
-#3) matplotlib(맷플롯립) 모듈 설치 
+#3) matplotlib(맷플롯립) 모듈 설치 - pip install matplotlib
 # 숫자 데이터들에 대한 그래프를 쉽게 그려줌. [ 선 그래프, 막대 그래프, 원 그래프, 산점도 그래프 ]
 import matplotlib.pyplot as plt
 

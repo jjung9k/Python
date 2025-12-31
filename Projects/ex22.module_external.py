@@ -5,7 +5,7 @@
 # 이를 외부모듈을 서버에 가지고 있으면서 필요할때 컴퓨터에 설치해주는 도구(프로그램) : pip (package installer for python) - CLI 설치
 
 #1. requests - 자동 디코딩, 자동 예외처리, json 모듈이 이미 연동되어 있음. HTTP 요청 작업이 용이함. 쿠키, 세션, 파일업로드 등 많은 작업이 편하게 구현가능
-#설치방법 ) vscode 에서 터미널(cmd, 명령프롬프트) 창을 열고 설치명령어 입력
+#설치방법 vscode 에서 터미널(cmd, 명령프롬프트) 창을 열고 설치명령어 입력
 # <> pip3 install 모듈명
 
 # 설치완료 되었으면.. 마치 표준모듈처럼 import 해서 사용
@@ -39,8 +39,8 @@ print()
 import datetime
 
 now= datetime.datetime.now() #오늘
-#날짜를 어제로 만들어야 한다.
-#now.replace(day= now.day-1) #1-1 -->> 0일 (안됨)
+# 날짜를 어제로 만들어야 한다.
+# now.replace(day= now.day-1) #1-1 -->> 0일 (안됨)
 # 날짜의 차이를 계산해주는 객체가 존재함
 now= now-datetime.timedelta(days=1)  #어제
 
